@@ -1,10 +1,33 @@
-<div class="cambio">
-  <input type="number" [(ngModel)]="cambioEuro">
-  <input type="number" [(ngModel)]="cambioKwanza">
+<div class="main">
+  <div class="cambio">
+    <div class="cambioEuro">
+      <label>Cambio Euro</label><br>
+      <input type="number" [(ngModel)]="cambioEuro">
+    </div>
+    <div class="cambioKwanza">
+      <label>Cambio Kwanza</label><br>
+      <input type="number" [(ngModel)]="cambioKwanza">
+    </div>
+  </div>
+  <div class="cambioOficial">
+    <button class="cambioEK" (click)="defaultEK()">Usar cambio oficial Euro para Kwanza</button>
+    <button class="cambioKE" (click)="defaultKE()">Usar cambio oficial Kwanza para Euro</button>
+  </div>
+  <div class="valores">
+    <div class="valorEuro">
+      <label>Valor Euro</label><br>
+      <input type="number" [(ngModel)]="valorEuro">
+    </div>
+    <div class="valorKwanza">
+      <label>Valor Kwanza</label><br>
+      <input type="number" [(ngModel)]="valorKwanza">
+    </div>
+  </div>
+  <div class="buttons">
+    <input class="euraoa" type="button" (click)="calculateEurAkz()" value="Euro para Kwanza">
+    <input class="aoaeur" type="button" (click)="calculateAkzEur()" value="Kwanza para Euro">
+  </div>
+  <div class="limpar">
+    <button (click)="limpar()">Limpar</button>
+  </div>
 </div>
-<div class="valores">
-  <input type="number" [(ngModel)]="valorEuro">
-  <input type="number" [(ngModel)]="valorKwanza">
-</div>
-<input type="button" (click)="calculateEurAkz()" value="Euro para Kwanza">
-<input type="button" (click)="calculateAkzEur()" value="Kwanza para Euro">
