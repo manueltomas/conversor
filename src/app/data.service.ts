@@ -13,6 +13,6 @@ export class DataService {
 
   getPrices(){
     
-    return this._http.get("https://min-api.cryptocompare.com/data/pricemulti?fsyms=EUR,AOA&tsyms=AOA,EUR");
+    return this._http.get("https://min-api.cryptocompare.com/data/pricemulti?fsyms=EUR,AOA,USD,BRL&tsyms=AOA,EUR,USD,BRL");
   }
 }

@@ -1,31 +1,49 @@
 <div class="main">
+  <div class="moedas">
+    <div class="moedaA">
+      <select [(ngModel)]="moedaA">
+        <option value="EUR">Euro</option>
+        <option value="USD">Dolar</option>
+        <option value="AOA">Kwanza</option>
+        <option value="BRL">Real</option>
+      </select>
+    </div>
+    <div class="moedaB">
+      <select [(ngModel)]="moedaB">
+        <option value="EUR">Euro</option>
+        <option value="USD">Dolar</option>
+        <option value="AOA">Kwanza</option>
+        <option value="BRL">Real</option>
+      </select>
+    </div>
+  </div>
   <div class="cambio">
     <div class="cambioEuro">
-      <label>Cambio Euro</label><br>
-      <input type="number" [(ngModel)]="cambioEuro">
+      <label>Cambio {{moedaA}}</label><br>
+      <input type="number" [(ngModel)]="cambioA">
     </div>
     <div class="cambioKwanza">
-      <label>Cambio Kwanza</label><br>
-      <input type="number" [(ngModel)]="cambioKwanza">
+      <label>Cambio {{moedaB}}</label><br>
+      <input type="number" [(ngModel)]="cambioB">
     </div>
   </div>
   <div class="cambioOficial">
-    <button class="cambioEK" (click)="defaultEK()">Usar cambio oficial Euro para Kwanza</button>
-    <button class="cambioKE" (click)="defaultKE()">Usar cambio oficial Kwanza para Euro</button>
+    <button class="cambioEK" (click)="defaultAB()">Usar cambio oficial {{moedaA}} para {{moedaB}}</button>
+    <button class="cambioKE" (click)="defaultBA()">Usar cambio oficial {{moedaB}} para {{moedaA}}</button>
   </div>
   <div class="valores">
     <div class="valorEuro">
-      <label>Valor Euro</label><br>
-      <input type="number" [(ngModel)]="valorEuro">
+      <label>Valor {{moedaA}}</label><br>
+      <input type="number" [(ngModel)]="valorA">
     </div>
     <div class="valorKwanza">
-      <label>Valor Kwanza</label><br>
-      <input type="number" [(ngModel)]="valorKwanza">
+      <label>Valor {{moedaB}}</label><br>
+      <input type="number" [(ngModel)]="valorB">
     </div>
   </div>
   <div class="buttons">
-    <input class="euraoa" type="button" (click)="calculateEurAkz()" value="Euro para Kwanza">
-    <input class="aoaeur" type="button" (click)="calculateAkzEur()" value="Kwanza para Euro">
+    <input class="euraoa" type="button" (click)="calculateEurAkz()" value="{{moedaA}} para {{moedaB}}">
+    <input class="aoaeur" type="button" (click)="calculateAkzEur()" value="{{moedaB}} para {{moedaA}}">
   </div>
   <div class="limpar">
     <button (click)="limpar()">Limpar</button>
